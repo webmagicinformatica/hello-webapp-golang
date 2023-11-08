@@ -1,0 +1,15 @@
+---
+- name: Remove and Run Docker Container
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Stop and remove existing container (if it exists)
+      command: docker stop helloapp
+      ignore_errors: yes
+
+    - name: Stop and remove existing container (if it exists)
+      command: docker rmi $(docker image ls)
+      ignore_errors: yes
+
+    - name: Run a new container
+      command: docker run -itd -p 8080:8080 --name helloapp --rm dab8106/hellogo

@@ -1,0 +1,12 @@
+- name: Copy and Start Go on Linux Server
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Copy Go Binary
+      copy:
+        src: ../todoapp
+        dest: /home/ec2-user
+        mode: "0755"
+
+    - name: Start Go Application
+      command: ./todoapp
