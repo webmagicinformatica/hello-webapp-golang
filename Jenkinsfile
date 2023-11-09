@@ -13,8 +13,8 @@ pipeline {
         stage('Unit Test') {
             steps {
                 script {
-                    sh 'go mod init main'
-                    sh 'go build -o main'
+                    sh 'go mod init hello'
+                    // sh 'go build -o main'
                     sh 'go test'
                 }
             }
