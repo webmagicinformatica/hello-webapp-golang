@@ -32,9 +32,7 @@ pipeline {
         stage('Run SonarQube Analysis') {
             steps {
                 script {
-                    withSonarQubeEnv('SONAR_TOKEN') {
                         sh '/usr/local/sonar/bin/sonar-scanner -X -Dsonar.organization=wm-demo -Dsonar.projectKey=wm-demo_hello-webapp-golang -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io'
-                    }
                 }
             }
         }
