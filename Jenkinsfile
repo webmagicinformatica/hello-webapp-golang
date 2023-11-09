@@ -14,7 +14,6 @@ pipeline {
             steps {
                 script {
                     sh 'go mod init hello'
-                    // sh 'go build -o main'
                     sh 'go test'
                 }
             }
