@@ -1,6 +1,6 @@
 // main_test.go
 
-package main
+package hello
 
 import (
 	"net/http"
